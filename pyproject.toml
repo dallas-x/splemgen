@@ -1,0 +1,47 @@
+[project]
+name = "splemgen"
+version = "0.1.0"
+description = "CLI tool for generating Splunk event_management lookup queries"
+authors = [
+    {name = "Dallas-x",email = "dallas@dallasbaker.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "platformdirs (>=4.9.4,<5.0.0)",
+    "pyperclip (>=1.11.0,<2.0.0)"
+    
+]
+
+[tool.poetry]
+packages = [{include = "splemgen", from = "src"}]
+
+
+[tool.poetry.scripts]
+splemgen = "splemgen.cli:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.15.5,<0.16.0)"
+]
