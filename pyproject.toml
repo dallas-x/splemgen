@@ -1,12 +1,12 @@
 [project]
 name = "splemgen"
-version = "0.1.0"
+version = "0.1.2"
 description = "CLI tool for generating Splunk event_management lookup queries"
 authors = [
     {name = "Dallas-x",email = "dallas@dallasbaker.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.10,<4.0"
 dependencies = [
     "platformdirs (>=4.9.4,<5.0.0)",
     "pyperclip (>=1.11.0,<2.0.0)"
@@ -22,7 +22,7 @@ splemgen = "splemgen.cli:main"
 
 [tool.ruff]
 line-length = 100
-target-version = "py314"
+target-version = "py310"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
